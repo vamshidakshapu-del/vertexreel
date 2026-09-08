@@ -3,7 +3,7 @@ export const services = [
     icon: 'app',
     title: 'Application Development',
     desc: 'Native-feeling mobile and web apps — from idea and UX to a polished, shippable product.',
-    points: ['iOS / Android & PWA', 'React / React Native', 'API & backend', 'App Store launch support'],
+    points: ['Android & PWA', 'React / React Native', 'API & backend', 'Play Store launch support'],
   },
   {
     icon: 'web',
@@ -20,42 +20,28 @@ export const services = [
 ]
 
 export const process = [
-  { step: '01', title: 'Discover', desc: 'We learn your goals, audience and brand, then map the scope.' },
+  { step: '01', title: 'Discover', desc: 'We learn your goals, audience and brand, then map the scope together.' },
   { step: '02', title: 'Design', desc: 'Wireframes, visual direction and prototypes you can click and feel.' },
-  { step: '03', title: 'Build', desc: 'Clean code, weekly demos and a build you can watch come together.' },
-  { step: '04', title: 'Launch', desc: 'We ship, measure and keep improving after go-live.' },
+  { step: '03', title: 'Build', desc: 'Clean code or edit timeline, with regular check-ins as it comes together.' },
+  { step: '04', title: 'Launch', desc: 'We ship, hand over everything, and stay available for changes.' },
 ]
 
-export const work = [
-  { title: 'Nova Fitness App', tag: 'Mobile App', hue: '262' },
-  { title: 'Lumen Studio Site', tag: 'Website', hue: '190' },
-  { title: 'Pulse Energy Reel', tag: 'Video', hue: '330' },
-  { title: 'Orbit SaaS Dashboard', tag: 'Web App', hue: '150' },
-  { title: 'Bloom Skincare Store', tag: 'E-commerce', hue: '20' },
-  { title: 'Vertex Brand Film', tag: 'Video', hue: '280' },
-]
-
-export const stats = [
-  { value: '120+', label: 'Projects delivered' },
-  { value: '48h', label: 'Avg. reel turnaround' },
-  { value: '4.9/5', label: 'Client rating' },
-  { value: '15M+', label: 'Views edited' },
-]
-
-export const testimonials = [
+// Why choose a small, new studio — honest value props, not fake metrics.
+export const whyUs = [
   {
-    quote: 'Vertex Reel rebuilt our site and our reels — bookings went up 40% in two months. The quality is unreal.',
-    name: 'Aditya R.',
-    role: 'Founder, Lumen Studio',
+    title: 'One team, three crafts',
+    desc: 'App, website and video handled by the same people — consistent look, no hand-offs.',
   },
   {
-    quote: 'They shipped our app faster than agencies quoting 3x the price, and the design still gets compliments.',
-    name: 'Sneha K.',
-    role: 'Product Lead, Nova',
+    title: 'You talk to the makers',
+    desc: 'No account managers or middlemen. Message us on Instagram and reach the person doing the work.',
   },
   {
-    quote: 'Every reel they edit performs. It genuinely feels like having an in-house creative team.',
-    name: 'Marcus T.',
-    role: 'Marketing, Pulse Energy',
+    title: 'Founding-client pricing',
+    desc: "We're just launching, so our first projects get our best rates and extra attention.",
+  },
+  {
+    title: 'Fast, visible progress',
+    desc: 'Regular previews so you always know where your project stands.',
   },
 ]

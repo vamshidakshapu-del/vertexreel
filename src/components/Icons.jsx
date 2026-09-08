@@ -1,21 +1,27 @@
 export function Logo() {
+  const gold = '#e0b93c'
+  const teal = '#2fd7c4'
+  const navy = '#141a2e'
+  // 8 film-reel / clock dots around the ring
+  const dots = Array.from({ length: 8 }, (_, i) => {
+    const a = (i / 8) * Math.PI * 2 - Math.PI / 2
+    return { x: 32 + Math.cos(a) * 23, y: 32 + Math.sin(a) * 23 }
+  })
   return (
     <svg viewBox="0 0 64 64" aria-hidden="true">
-      <defs>
-        <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#7c5cff" />
-          <stop offset="1" stopColor="#00e0d1" />
-        </linearGradient>
-      </defs>
-      <rect width="64" height="64" rx="16" fill="rgba(255,255,255,0.06)" />
+      <circle cx="32" cy="32" r="29.5" fill={navy} stroke={gold} strokeWidth="1.6" />
+      {dots.map((d, i) => (
+        <circle key={i} cx={d.x} cy={d.y} r="1.7" fill="#2a3350" />
+      ))}
       <path
-        d="M16 16 L32 46 L48 16"
+        d="M19 17 L31.5 43 L44.5 17"
         fill="none"
-        stroke="url(#lg)"
-        strokeWidth="7"
+        stroke={gold}
+        strokeWidth="6.4"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+      <path d="M27 39 L27 51 L37 45 Z" fill={teal} />
     </svg>
   )
 }

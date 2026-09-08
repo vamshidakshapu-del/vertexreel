@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { BRAND } from './config'
-import { services, process, work, stats, testimonials } from './data'
+import { services, process, whyUs } from './data'
 import { Logo, ServiceIcon, InstagramIcon, ArrowIcon, MenuIcon } from './components/Icons'
 
 /* Reveal-on-scroll wrapper */
@@ -39,7 +39,7 @@ function Navbar() {
   }, [])
   const links = [
     ['Services', '#services'],
-    ['Work', '#work'],
+    ['Why us', '#why'],
     ['Process', '#process'],
     ['Contact', '#contact'],
   ]
@@ -89,22 +89,23 @@ function Hero() {
       <div className="container">
         <span className="pill">
           <span className="dot" />
-          Now booking projects for {new Date().getFullYear()}
+          New studio — now taking our first projects
         </span>
         <h1>
-          We build <span className="gradient-text">apps, websites</span> &amp; cinematic edits.
+          We build <span className="gradient-text">the tech</span>. We cut{' '}
+          <span className="gradient-text">the story</span>.
         </h1>
         <p className="lead">
-          {BRAND.name} is a creative studio turning ideas into polished products and
-          scroll-stopping video. Design, build and edit — all under one roof.
+          {BRAND.name} is a creative studio building applications and websites, and editing
+          video that actually gets watched. Design, build and edit — all under one roof.
         </p>
         <div className="hero-actions">
           <a className="btn ig-btn" href={BRAND.instagramUrl} target="_blank" rel="noreferrer">
             <InstagramIcon />
             Contact us on Instagram
           </a>
-          <a className="btn btn-ghost" href="#work">
-            See our work <ArrowIcon />
+          <a className="btn btn-ghost" href="#services">
+            Explore services <ArrowIcon />
           </a>
         </div>
 
@@ -153,24 +154,23 @@ function Services() {
   )
 }
 
-function Work() {
+function WhyUs() {
   return (
-    <section id="work">
+    <section id="why">
       <div className="container">
         <Reveal className="section-head">
-          <span className="eyebrow">Selected work</span>
-          <h2 className="section-title">Projects we&apos;re proud of.</h2>
-          <p>A snapshot of recent apps, sites and edits. Full portfolio in our Instagram highlights.</p>
+          <span className="eyebrow">Why us</span>
+          <h2 className="section-title">A fresh studio, fully invested in your project.</h2>
+          <p>
+            We&apos;re just getting started — which means your project gets our full focus, our
+            best pricing, and work we&apos;re determined to be proud of.
+          </p>
         </Reveal>
-        <div className="work-grid">
-          {work.map((w, i) => (
-            <Reveal
-              className="work-item"
-              key={w.title}
-              style={{ '--h': w.hue, transitionDelay: `${i * 70}ms` }}
-            >
-              <span className="tag">{w.tag}</span>
+        <div className="why-grid">
+          {whyUs.map((w, i) => (
+            <Reveal className="card" key={w.title} style={{ transitionDelay: `${i * 80}ms` }}>
               <h3>{w.title}</h3>
+              <p style={{ marginBottom: 0 }}>{w.desc}</p>
             </Reveal>
           ))}
         </div>
@@ -193,48 +193,6 @@ function Process() {
               <div className="num gradient-text">{p.step}</div>
               <h3>{p.title}</h3>
               <p>{p.desc}</p>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function Stats() {
-  return (
-    <div className="stats-band">
-      <div className="container">
-        <div className="stats-grid">
-          {stats.map((s) => (
-            <Reveal className="stat" key={s.label}>
-              <div className="v gradient-text">{s.value}</div>
-              <div className="l">{s.label}</div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function Testimonials() {
-  return (
-    <section id="testimonials">
-      <div className="container">
-        <Reveal className="section-head">
-          <span className="eyebrow">Kind words</span>
-          <h2 className="section-title">Clients keep coming back.</h2>
-        </Reveal>
-        <div className="quotes">
-          {testimonials.map((t, i) => (
-            <Reveal className="quote" key={t.name} style={{ transitionDelay: `${i * 90}ms` }}>
-              <div className="mark">&ldquo;</div>
-              <p>{t.quote}</p>
-              <div className="who">
-                {t.name}
-                <span>{t.role}</span>
-              </div>
             </Reveal>
           ))}
         </div>
@@ -274,7 +232,7 @@ function Footer() {
         </a>
         <div className="footer-links">
           <a href="#services">Services</a>
-          <a href="#work">Work</a>
+          <a href="#why">Why us</a>
           <a href={BRAND.instagramUrl} target="_blank" rel="noreferrer">
             Instagram
           </a>
@@ -294,10 +252,8 @@ export default function App() {
       <main>
         <Hero />
         <Services />
-        <Work />
-        <Stats />
+        <WhyUs />
         <Process />
-        <Testimonials />
         <Contact />
       </main>
       <Footer />
