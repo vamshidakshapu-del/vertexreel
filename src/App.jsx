@@ -56,16 +56,26 @@ function Navbar() {
               {label}
             </a>
           ))}
+          <a
+            className="nav-menu-cta"
+            href={BRAND.instagramUrl}
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => setOpen(false)}
+          >
+            <InstagramIcon />
+            Contact us on Instagram
+          </a>
         </nav>
         <div className="nav-cta">
           <a
-            className="btn btn-primary"
+            className="btn btn-primary nav-desktop-cta"
             href={BRAND.instagramUrl}
             target="_blank"
             rel="noreferrer"
           >
             <InstagramIcon />
-            Contact us
+            <span>Contact us</span>
           </a>
           <button
             className="menu-btn"
